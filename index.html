@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PrepLedger</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div id="login" class="login hidden">
+  <form id="loginForm" class="login-box" autocomplete="on">
+    <h1>PrepLedger</h1>
+    <p class="lede">A running record of where you have applied, what you have practised, and what you are about to forget.</p>
+    <label class="field name-field hidden">Name<input name="name" autocomplete="name"></label>
+    <label class="field">Email<input name="email" type="email" required autocomplete="username"></label>
+    <label class="field">Password <span class="hint">at least 8 characters</span><input name="password" type="password" required minlength="8" autocomplete="current-password"></label>
+    <p class="error" id="loginError" role="alert"></p>
+    <div class="login-actions">
+      <button class="btn primary" type="submit" id="loginSubmit">Sign in</button>
+      <button class="linkbtn" type="button" id="loginToggle">Create an account</button>
+    </div>
+  </form>
+</div>
+
+<div id="shell" class="shell hidden">
+  <aside class="side">
+    <div class="brand">PrepLedger</div>
+    <nav id="nav">
+      <a href="#/dashboard" data-page="dashboard">Overview</a>
+      <a href="#/applications" data-page="applications">Applications</a>
+      <a href="#/practice" data-page="practice">Practice log</a>
+      <a href="#/mocks" data-page="mocks">Mock tests</a>
+    </nav>
+    <div class="side-foot">
+      <div class="who" id="who"></div>
+      <button class="linkbtn" data-act="export-menu">Export CSV</button>
+      <button class="linkbtn" data-act="logout">Sign out</button>
+    </div>
+  </aside>
+  <main id="view" class="view"></main>
+</div>
+
+<div id="drawerMask" class="mask hidden" data-act="close-drawer"></div>
+<aside id="drawer" class="drawer hidden" aria-hidden="true"></aside>
+<div id="toast" class="toast hidden" role="status"></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

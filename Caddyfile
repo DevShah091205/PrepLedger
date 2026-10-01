@@ -1,0 +1,5 @@
+# Plain HTTP on the server IP. For HTTPS, replace ":80" with your domain, e.g. prep.yourdomain.com
+:80 {
+    encode gzip
+    reverse_proxy web:8000
+}
